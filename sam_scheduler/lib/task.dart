@@ -1,4 +1,3 @@
-dartCopy code
 // lib/task.dart
 
 class Task {
