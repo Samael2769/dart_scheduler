@@ -23,7 +23,7 @@ class TaskManager {
 
     List<Task> getTaskDueToday() {
       var today = DateTime.now();
-      return tasks.where((task) => task.dueDate == today);
+      return tasks.where((task) => task.dueDate == today).toList();
     }
 
     void printTasks() {
@@ -40,7 +40,7 @@ class TaskManager {
 
     List<Task> sortTasks() {
         tasks.sort((a, b) => a.dueDate.compareTo(b.dueDate));
-        return tasks;
+        return tasks.toList();
     }
 
     void printSortedTasks() {
