@@ -22,7 +22,7 @@ class TaskManager {
     }
 
     List<Task> getTaskDueToday() {
-      var today = DateTime.now();
+      var today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
       return tasks.where((task) => task.dueDate == today).toList();
     }
 
@@ -39,6 +39,11 @@ class TaskManager {
     }
 
     List<Task> sortTasks() {
+        tasks.sort((a, b) => a.priority.compareTo(b.priority));
+        return tasks.toList();
+    }
+
+    List<Task> sortTasksByDate() {
         tasks.sort((a, b) => a.dueDate.compareTo(b.dueDate));
         return tasks.toList();
     }
